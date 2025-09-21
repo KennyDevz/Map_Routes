@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Routes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.7.0/dist/geosearch.css" />
+    <link rel="stylesheet" href="{% static 'routes/css/style.css' %}">
+</head>
+<body>
+    <h1>Map Routes</h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Search Route</h2>
+            <input type="text" id="start" placeholder="Start location" autocomplete="off" />
+            <div id="start-suggestions" class="suggestions"></div>
+            <input type="text" id="end" placeholder="Destination" autocomplete="off" />
+            <div id="end-suggestions" class="suggestions"></div>
+            <button onclick="showRoute()">Show Route</button>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@3.7.0/dist/bundle.min.js"></script>
+    <script src="{% static 'routes/js/routes.js' %}"></script>
+</body>
+</html>
